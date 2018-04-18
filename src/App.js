@@ -25,10 +25,17 @@ class App extends Component {
         }]
       };
       let options={
+        title:{
+          display:true,
+          text:"Units: Billions of Dollars Seasonal Adjustment: Seasonally Adjusted Annual Rate Notes: A Guide to the National Income and Product Accounts of the United States (NIPA) - (http://www.bea.gov/national/pdf/nipaguid.pdf)",
+          position:"bottom",
+          fontColor:'black',
+          fontSize:10
+        },
         legend: {
             labels: {
                 fontColor: "black",
-                fontSize: 18
+                fontSize: 12,
           }
         },
         scales:{
@@ -41,9 +48,6 @@ class App extends Component {
               time:{displayFormats:{years:"YYYY"}},
               gridLines:{
                 display:false,
-                drawBorder:true,
-                color:'black',
-                drawTicks:true,
               },
                ticks:{
                 display:true,
@@ -57,19 +61,18 @@ class App extends Component {
               gridLines:{
                 display:true,
                 drawBorder:true,
-                color:'black',
+                color:'lightgrey',
+                drawTicks:true
               },
               scaleLabel:{
                 display:true,
                 labelString:"Gross Domestic Product, USA",
-                fontColor:'black'
+                fontColor:'black',
+
               },
               ticks:{
                 display:true,
                 fontColor:"black",
-                major:{
-                  color:'red'
-                }
               }
             }
           ]
@@ -81,7 +84,7 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App" style={{width:'80%',margin:'0 auto',backgroundColor:'#EBF7E3'}}>
+      <div className="App" style={{width:'80%',margin:'20px auto',backgroundColor:'#EBF7E3'}}>
         <Bar data={this.state.data} options={this.state.options} />
       </div>
     );
